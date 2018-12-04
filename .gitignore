@@ -1,0 +1,5 @@
+#ignore all the files and direcotries on that file
+
+#the gcodes of the pieces are not necessary since every printer needs
+#it's own.
+GCODES/
