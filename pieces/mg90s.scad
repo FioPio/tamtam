@@ -56,5 +56,3 @@ module mg90s(alpha=-1,is_cutted= false )
 							}
 			}
 }
-
-mg90s();
