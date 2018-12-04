@@ -2,7 +2,7 @@
  *                              mg90s                                  *
  ***********************************************************************
  * @author FioPio   (Ferriol Pey Comas)  ferriol73pey@gmail.com        *
- * @version v1.0    03/12/2018                                         *
+ * @version v1.1    04/12/2018                                         *
  ***********************************************************************
  * This file contains the 3D model of microservos mg90s, this has been *
  * done tinking on tamtam, a minihumanoid low cost designed by me,     *
@@ -26,10 +26,21 @@ $fn=120;
 module mg90s(alpha=-1,is_cutted= false )
 {
    cube([23,12,23]);	
-   if(!is_cutted)translate([-5,0,19])cube([33,12,2.5]);
+   if(!is_cutted)
+   {
+				  translate([-5,0,19])union()
+				  {
+         cube([33,12,2.5]);
+         translate([2.5,6,-(10-2.5)/2])cylinder(r=1.25,h=11);
+         translate([2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
+         translate([33-2.5,6,-(10-2.5)/2])cylinder(r=1.25,h=11);
+         translate([33-2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
+						}
+			}
    translate([6,6])cylinder(r=6,h=29);
    translate([12,6])cylinder(r=3,h=29);
    translate([6,6])cylinder(r=3,h=35.1);
+   translate([-4,3.5,3.5])cube([5,5,2]);
    if(alpha!=-1)
    {
 				   translate([6,6,23+6+6.1-2])rotate([0,0,alpha])union()
@@ -45,3 +56,5 @@ module mg90s(alpha=-1,is_cutted= false )
 							}
 			}
 }
+
+mg90s();
