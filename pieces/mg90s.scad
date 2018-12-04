@@ -6,7 +6,7 @@
  ***********************************************************************
  * This file contains the 3D model of microservos mg90s, this has been *
  * done tinking on tamtam, a minihumanoid low cost designed by me,     *
- * FioPey, but it may be used on other projects due the license of     *
+ * FioPio, but it may be used on other projects due the license of     *
  * this. Please check the LICENSE file to know the details.            *
  ***********************************************************************/
 
@@ -23,7 +23,7 @@ $fn=120;
  *        servo will desapear, in order to have a module without it if *
  *        needed.                                                      *
  ***********************************************************************/
-module mg90s(alpha=-1,is_cutted= false )
+module mg90s(alpha=-1,is_cutted= false,two_axies=false )
 {
    cube([23,12,23]);	
    if(!is_cutted)
@@ -35,6 +35,15 @@ module mg90s(alpha=-1,is_cutted= false )
          translate([2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
          translate([33-2.5,6,-(10-2.5)/2])cylinder(r=1.25,h=11);
          translate([33-2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
+						}
+			}
+			if(two_axies)
+			{
+				  translate([6,6,-1.2])                                             //Continuation of the axis
+	     {
+							   cylinder(r1=1,r2=1.9,h=1.2);
+							   translate([0,0,0.01])cylinder(r1=1,r2=1.9,h=1.2);
+							   translate([0,0,-8])cylinder(r=1,h=9);
 						}
 			}
    translate([6,6])cylinder(r=6,h=29);
