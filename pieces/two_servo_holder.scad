@@ -20,6 +20,12 @@ difference()
 				  mg90s();                                                          //The lower servo
 					 translate([-9,3.5,3.5])cube([10,10,2]);                           //The hole to pass the cable
 						translate([0,6,22])cube(15);                                      //The hole to introduce the servo
+						translate([6,6,-1.2])                                             //Continuation of the axis
+	     {
+							   cylinder(r1=1,r2=1.9,h=1.2);
+							   translate([0,0,0.01])cylinder(r1=1,r2=1.9,h=1.2);
+							   translate([0,0,-8])cylinder(r=1,h=9);
+						}
 			}
    translate([29,23,12])rotate([90,0,-90])
    {
