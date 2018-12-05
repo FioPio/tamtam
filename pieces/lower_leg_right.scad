@@ -7,6 +7,7 @@
  * This file contains the lower part of the leg.                       *
  ***********************************************************************/
 use <mg90s.scad>
+$fn=120;
 R=6;
 difference()
 {
@@ -20,5 +21,5 @@ difference()
    translate([-7,4,-10])cube([30,33,23.5]);
    translate([-7,4,16.5])cube([30,33,22]);
    translate([6,8,-6])rotate([-90,180])mg90s(90,false,true);
-   translate([-6,8,36])rotate([-90,0])mg90s(90,false,true);
+   translate([-6,8,36])rotate([-90,0])mg90s(90,true,true);
 }
