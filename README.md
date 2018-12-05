@@ -1,4 +1,5 @@
 # tamtam
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!UNDER CONSTRUCTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 This repo holds Tamtam (an small low-cost humanoid).
 It will contain all the documentation needed to build that litte
 robot.
