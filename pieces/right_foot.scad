@@ -11,7 +11,7 @@ use <mg90s.scad>
 //Parameters
 $fn=120;
 foot_width=50;//50; 
-foot_length=1.62*foot_width;
+foot_length=70;//1.62*foot_width;
 R=8;
 foot_height=2.5;
 translate([-foot_width/2,-foot_length/2])difference()
@@ -25,7 +25,7 @@ translate([-foot_width/2,-foot_length/2])difference()
          translate([foot_width-R,foot_length-R,0])scale([1,1,(foot_height)/R])sphere(R);
          translate([R,foot_length-R,0])scale([1,1,(foot_height)/R])sphere(R);
       }
-      translate([13.40,+0.5+(32.9/2)+1.5-1.31,1])rotate([-90,105-90,0])scale([1,2.05,1])cylinder(r=8,h=43);
+      translate([13.40,-5.5+0.5+(32.9/2)+1.5-1.31,1])rotate([-90,105-90,0])scale([1,2.05,1])cylinder(r=8,h=43);
 			}
    translate([0,0,-50])cube([foot_width,foot_length,50]);
    //model tormell i servos
