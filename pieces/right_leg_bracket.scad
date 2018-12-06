@@ -2,7 +2,7 @@
  *                         right_leg_bracket                           *
  ***********************************************************************
  * @author FioPio   (Ferriol Pey Comas)  ferriol73pey@gmail.com        *
- * @version v1.0    06/12/2018                                         *
+ * @version v1.1    06/12/2018                                         *
  ***********************************************************************
  * This file contains the 3D model of the right leg bracket.           *
  ***********************************************************************/
@@ -22,4 +22,5 @@ difference()
    translate([-5.5-6,6+41/2,29+12.5+4+2])rotate([180,0])mg90s(90);
    translate([-5.5-6,6+41/2,29+12.5+4+2.5])rotate([180,0])mg90s(270);
    translate([-5.5-6,6+41/2,29+12.5+4+2])rotate([180,0])mg90s(270);
+   rotate([0,32.5])translate([-33,4])cube([33,33,6]);
 }
