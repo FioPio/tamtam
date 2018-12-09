@@ -28,9 +28,9 @@ module mg90s(alpha=-1,is_cutted= false,two_axies=false )
    cube([23,12,23]);	
    if(!is_cutted)
    {
-				  translate([-5,0,19])union()
+				  translate([-5,0,18.75])union()
 				  {
-         cube([33,12,2.5]);
+         cube([33,12,3]);
          translate([2.5,6,-(10-2.5)/2])cylinder(r=1.25,h=11);
          translate([2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
          translate([33-2.5,6,-(10-2.5)/2])cylinder(r=1.25,h=11);
@@ -48,7 +48,7 @@ module mg90s(alpha=-1,is_cutted= false,two_axies=false )
 			}
    translate([6,6])cylinder(r=6,h=29);
    translate([12,6])cylinder(r=3,h=29);
-   translate([6,6])cylinder(r=3,h=35.1);
+   translate([6,6])cylinder(r=3.75,h=35.1);
    translate([-4,3.5,3.5])cube([5,5,2]);
    if(alpha!=-1)
    {
@@ -56,8 +56,8 @@ module mg90s(alpha=-1,is_cutted= false,two_axies=false )
 				   {
 				      hull()
 				      {
-								     cylinder(r=3,h=2);
-								     translate([15-1.75,0])cylinder(r=1.75,h=2);
+								     cylinder(r=3.75,h=2);
+								     translate([15-1.75,0])cylinder(r=2,h=2);
 							   }
 							   //holes for the screws (there is one every 2 mm)
 							   translate([4.5,0,-5])cylinder(r=.5,h=12);
@@ -65,3 +65,4 @@ module mg90s(alpha=-1,is_cutted= false,two_axies=false )
 							}
 			}
 }
+
