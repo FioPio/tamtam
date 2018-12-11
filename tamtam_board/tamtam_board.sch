@@ -860,25 +860,14 @@ Wire Wire Line
 Connection ~ 4500 2500
 Wire Wire Line
 	4500 2500 4500 2300
-$Comp
-L Connector_Generic:Conn_01x02 J21
-U 1 1 5C1C42BB
-P 8850 3200
-F 0 "J21" H 8930 3192 50  0000 L CNN
-F 1 "Conn_01x02" H 8930 3101 50  0000 L CNN
-F 2 "Connector_Phoenix_MC_HighVoltage:PhoenixContact_MCV_1,5_2-G-5.08_1x02_P5.08mm_Vertical" H 8850 3200 50  0001 C CNN
-F 3 "~" H 8850 3200 50  0001 C CNN
-	1    8850 3200
-	1    0    0    -1  
-$EndComp
-Text GLabel 8500 3300 0    50   Input ~ 0
+Text GLabel 8100 2900 0    50   Input ~ 0
 GND
-Text GLabel 8500 3200 0    50   Input ~ 0
+Text GLabel 8100 2800 0    50   Input ~ 0
 V_LIPO
 Wire Wire Line
-	8650 3200 8500 3200
+	8250 2800 8100 2800
 Wire Wire Line
-	8500 3300 8650 3300
+	8100 2900 8250 2900
 Text GLabel 3400 2750 2    50   Input ~ 0
 LVL_LIPO
 Wire Wire Line
@@ -926,38 +915,6 @@ Wire Wire Line
 Wire Wire Line
 	9200 3900 9200 3700
 Connection ~ 9200 3700
-$Comp
-L Device:LED D1
-U 1 1 5C221EED
-P 5200 5400
-F 0 "D1" H 5192 5145 50  0000 C CNN
-F 1 "LED" H 5192 5236 50  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5200 5400 50  0001 C CNN
-F 3 "~" H 5200 5400 50  0001 C CNN
-	1    5200 5400
-	-1   0    0    1   
-$EndComp
-Text GLabel 4950 5400 0    50   Input ~ 0
-+5V
-$Comp
-L Device:R R4
-U 1 1 5C22220B
-P 5650 5400
-F 0 "R4" V 5443 5400 50  0000 C CNN
-F 1 "220" V 5534 5400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5580 5400 50  0001 C CNN
-F 3 "~" H 5650 5400 50  0001 C CNN
-	1    5650 5400
-	0    1    1    0   
-$EndComp
-Text GLabel 5900 5400 2    50   Input ~ 0
-GND
-Wire Wire Line
-	4950 5400 5050 5400
-Wire Wire Line
-	5350 5400 5500 5400
-Wire Wire Line
-	5800 5400 5900 5400
 $Comp
 L Connector_Generic:Conn_01x04 J27
 U 1 1 5C24EBC1
@@ -1153,33 +1110,6 @@ Wire Wire Line
 	10250 3800 10350 3800
 Wire Wire Line
 	10350 3900 10250 3900
-$Comp
-L Connector_Generic:Conn_01x04 J36
-U 1 1 5C140692
-P 10550 4150
-F 0 "J36" H 10630 4142 50  0000 L CNN
-F 1 "Conn_01x04" H 10630 4051 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 10550 4150 50  0001 C CNN
-F 3 "~" H 10550 4150 50  0001 C CNN
-	1    10550 4150
-	1    0    0    -1  
-$EndComp
-Text GLabel 10250 4050 0    50   Input ~ 0
-+5V
-Text GLabel 10250 4150 0    50   Input ~ 0
-SDA
-Text GLabel 10250 4250 0    50   Input ~ 0
-SCL
-Text GLabel 10250 4350 0    50   Input ~ 0
-GND
-Wire Wire Line
-	10250 4050 10350 4050
-Wire Wire Line
-	10350 4150 10250 4150
-Wire Wire Line
-	10250 4250 10350 4250
-Wire Wire Line
-	10350 4350 10250 4350
 Text Label 10150 2500 0    50   ~ 0
 I2C
 $Comp
@@ -1248,29 +1178,6 @@ Wire Wire Line
 	3300 3550 3450 3550
 Wire Wire Line
 	3450 3650 3300 3650
-Text GLabel 3400 2050 2    50   Input ~ 0
-BZR
-Wire Wire Line
-	3300 2050 3400 2050
-Text GLabel 8850 2800 0    50   Input ~ 0
-BZR
-$Comp
-L Device:Buzzer BZ1
-U 1 1 5C2131BA
-P 9100 2900
-F 0 "BZ1" H 9253 2929 50  0000 L CNN
-F 1 "Buzzer" H 9253 2838 50  0000 L CNN
-F 2 "Buzzer_Beeper:Buzzer_12x9.5RM7.6" V 9075 3000 50  0001 C CNN
-F 3 "~" V 9075 3000 50  0001 C CNN
-	1    9100 2900
-	1    0    0    -1  
-$EndComp
-Text GLabel 8850 3000 0    50   Input ~ 0
-GND
-Wire Wire Line
-	8850 2800 9000 2800
-Wire Wire Line
-	9000 3000 8850 3000
 Text GLabel 3400 2850 2    50   Input ~ 0
 ADC1
 Text GLabel 3400 2950 2    50   Input ~ 0
@@ -1357,98 +1264,6 @@ Wire Wire Line
 Wire Wire Line
 	7000 4100 6900 4100
 $Comp
-L Connector_Generic:Conn_01x03 J4
-U 1 1 5C364568
-P 5650 3750
-F 0 "J4" H 5730 3792 50  0000 L CNN
-F 1 "Conn_01x03" H 5730 3701 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5650 3750 50  0001 C CNN
-F 3 "~" H 5650 3750 50  0001 C CNN
-	1    5650 3750
-	1    0    0    -1  
-$EndComp
-Text GLabel 5350 3650 0    50   Input ~ 0
-PD4
-Text GLabel 5350 3750 0    50   Input ~ 0
-GND
-Text GLabel 5350 3850 0    50   Input ~ 0
-+5V
-Wire Wire Line
-	5350 3650 5450 3650
-Wire Wire Line
-	5450 3750 5350 3750
-Wire Wire Line
-	5350 3850 5450 3850
-$Comp
-L Connector_Generic:Conn_01x03 J5
-U 1 1 5C3BEC57
-P 5650 4100
-F 0 "J5" H 5730 4142 50  0000 L CNN
-F 1 "Conn_01x03" H 5730 4051 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5650 4100 50  0001 C CNN
-F 3 "~" H 5650 4100 50  0001 C CNN
-	1    5650 4100
-	1    0    0    -1  
-$EndComp
-Text GLabel 5350 4000 0    50   Input ~ 0
-PD7
-Text GLabel 5350 4100 0    50   Input ~ 0
-GND
-Text GLabel 5350 4200 0    50   Input ~ 0
-+5V
-Wire Wire Line
-	5350 4000 5450 4000
-Wire Wire Line
-	5450 4100 5350 4100
-Wire Wire Line
-	5350 4200 5450 4200
-$Comp
-L Connector_Generic:Conn_01x03 J2
-U 1 1 5C3D6805
-P 5650 3050
-F 0 "J2" H 5730 3092 50  0000 L CNN
-F 1 "Conn_01x03" H 5730 3001 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5650 3050 50  0001 C CNN
-F 3 "~" H 5650 3050 50  0001 C CNN
-	1    5650 3050
-	1    0    0    -1  
-$EndComp
-Text GLabel 5350 2950 0    50   Input ~ 0
-PD2
-Text GLabel 5350 3050 0    50   Input ~ 0
-GND
-Text GLabel 5350 3150 0    50   Input ~ 0
-+5V
-Wire Wire Line
-	5350 2950 5450 2950
-Wire Wire Line
-	5450 3050 5350 3050
-Wire Wire Line
-	5350 3150 5450 3150
-$Comp
-L Connector_Generic:Conn_01x03 J3
-U 1 1 5C3D6812
-P 5650 3400
-F 0 "J3" H 5730 3442 50  0000 L CNN
-F 1 "Conn_01x03" H 5730 3351 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5650 3400 50  0001 C CNN
-F 3 "~" H 5650 3400 50  0001 C CNN
-	1    5650 3400
-	1    0    0    -1  
-$EndComp
-Text GLabel 5350 3300 0    50   Input ~ 0
-PD3
-Text GLabel 5350 3400 0    50   Input ~ 0
-GND
-Text GLabel 5350 3500 0    50   Input ~ 0
-+5V
-Wire Wire Line
-	5350 3300 5450 3300
-Wire Wire Line
-	5450 3400 5350 3400
-Wire Wire Line
-	5350 3500 5450 3500
-$Comp
 L Device:R R3
 U 1 1 5C420A31
 P 5600 4850
@@ -1467,41 +1282,45 @@ Wire Wire Line
 	5350 4850 5450 4850
 Wire Wire Line
 	5750 4850 5850 4850
-Text GLabel 3450 3750 2    50   Input ~ 0
-PD2
-Text GLabel 3450 3850 2    50   Input ~ 0
-PD3
-Text GLabel 3450 3950 2    50   Input ~ 0
-PD4
-Wire Wire Line
-	3300 3750 3450 3750
-Wire Wire Line
-	3450 3850 3300 3850
-Wire Wire Line
-	3300 3950 3450 3950
-Text GLabel 3450 4250 2    50   Input ~ 0
-PD7
-Wire Wire Line
-	3300 4250 3450 4250
-$Comp
-L Connector_Generic:Conn_02x01 J20
-U 1 1 5C4E8280
-P 7800 2800
-F 0 "J20" H 7850 3017 50  0000 C CNN
-F 1 "Conn_02x01" H 7850 2926 50  0000 C CNN
-F 2 "Connector_Phoenix_MC_HighVoltage:PhoenixContact_MCV_1,5_2-G-5.08_1x02_P5.08mm_Vertical" H 7800 2800 50  0001 C CNN
-F 3 "~" H 7800 2800 50  0001 C CNN
-	1    7800 2800
-	1    0    0    -1  
-$EndComp
-Text GLabel 8300 2800 2    50   Input ~ 0
+Text GLabel 8100 3000 0    50   Input ~ 0
 +5V
-Text GLabel 7400 2800 0    50   Input ~ 0
-+6V
-Wire Wire Line
-	8300 2800 8100 2800
-Wire Wire Line
-	7600 2800 7400 2800
 NoConn ~ 2100 2050
 NoConn ~ 2100 2150
+NoConn ~ 3300 4250
+NoConn ~ 3300 3950
+NoConn ~ 3300 3850
+NoConn ~ 3300 3750
+NoConn ~ 3300 2050
+Wire Wire Line
+	8250 3000 8100 3000
+$Comp
+L Connector_Generic:Conn_01x03 J2
+U 1 1 5C1EF056
+P 8450 2900
+F 0 "J2" H 8530 2942 50  0000 L CNN
+F 1 "Conn_01x03" H 8530 2851 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8450 2900 50  0001 C CNN
+F 3 "~" H 8450 2900 50  0001 C CNN
+	1    8450 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x01 J3
+U 1 1 5C22C0F9
+P 5250 3100
+F 0 "J3" H 5300 3317 50  0000 C CNN
+F 1 "Conn_02x01" H 5300 3226 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x01_P2.54mm_Vertical" H 5250 3100 50  0001 C CNN
+F 3 "~" H 5250 3100 50  0001 C CNN
+	1    5250 3100
+	1    0    0    -1  
+$EndComp
+Text GLabel 4900 3100 0    50   Input ~ 0
++6V
+Text GLabel 5700 3100 2    50   Input ~ 0
+GND
+Wire Wire Line
+	5550 3100 5700 3100
+Wire Wire Line
+	5050 3100 4900 3100
 $EndSCHEMATC
