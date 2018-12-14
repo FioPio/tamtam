@@ -2,15 +2,16 @@
  *                         body_back_cover                             *
  ***********************************************************************
  * @author  FioPio    (Ferriol Pey Comas)   ferriol73pey@gmail.com     *
- * @version v1.2       07/12/2018                                      *
+ * @version v1.3       14/12/2018                                      *
  ***********************************************************************
  * This file contains the 3D model of the body part that covers the    *
  * electronic parts.                                                   *
  ***********************************************************************/
 include <body_data.scad>
+$fn=200;
 back_cover_height=20;
 R_S=8;
-offset_back=10;
+offset_back=0;
 wall_thickness=4;
 
 difference()
@@ -81,6 +82,7 @@ difference()
 			   cylinder(r=3,h=110);
 			   translate([-19,0])cylinder(r=3,h=110);
 			}
+			translate([body_width/2-15,body_height-5,-8])cube([30,20,10]);
 }
 
 /*/

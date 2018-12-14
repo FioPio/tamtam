@@ -9,3 +9,6 @@ time to finish the last pieces and to  set up the electronical part.
 
 I'll also will publish the code,and there will be the possibility of
 adding a raspberry pi zero, but I'm still working on it
+
+
+the robot is 223.25 mm hight
