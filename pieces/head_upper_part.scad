@@ -2,13 +2,13 @@
  *                         head_upper_part                             *
  ***********************************************************************
  * @author FioPio   (Ferriol Pey Comas)  ferriol73pey@gmail.com        *
- * @version v2.0    14/12/2018                                         *
+ * @version v2.1    15/12/2018                                         *
  ***********************************************************************
  * This file contains the 3D model of the upper part of the head.      *
  ***********************************************************************/
 use<mg90s.scad>
 
-$fn=200;
+$fn=120;
 R=3;
 R_cam_optic=2;
 head_lenght=45;
@@ -21,14 +21,14 @@ difference()
    //head
    hull()
    {
-      translate([head_widht/2-R,head_lenght/2-R,R])sphere(r=R);
-      translate([R-head_widht/2,head_lenght/2-R,R])sphere(r=R);
-      translate([head_widht/2-R,R-head_lenght/2,R])sphere(r=R);
-      translate([R-head_widht/2,R-head_lenght/2,R])sphere(r=R);
-      translate([head_widht/2-R,head_lenght/2-R,head_hight-R])sphere(r=R);
-      translate([R-head_widht/2,head_lenght/2-R,head_hight-R])sphere(r=R);
-      translate([head_widht/2-R,R-head_lenght/2,head_hight-R])sphere(r=R);
-      translate([R-head_widht/2,R-head_lenght/2,head_hight-R])sphere(r=R);
+      translate([head_widht/2-R,head_lenght/2-R])cylinder(r=R,h=R);
+      translate([R-head_widht/2,head_lenght/2-R])cylinder(r=R,h=R);
+      translate([head_widht/2-R,R-head_lenght/2])cylinder(r=R,h=R);
+      translate([R-head_widht/2,R-head_lenght/2])cylinder(r=R,h=R);
+      translate([head_widht/2-R,head_lenght/2-R,head_hight-R])cylinder(r=R,h=R);
+      translate([R-head_widht/2,head_lenght/2-R,head_hight-R])cylinder(r=R,h=R);
+      translate([head_widht/2-R,R-head_lenght/2,head_hight-R])cylinder(r=R,h=R);
+      translate([R-head_widht/2,R-head_lenght/2,head_hight-R])cylinder(r=R,h=R);
 			}
    union()
    {
