@@ -2,7 +2,7 @@
  *                              mg90s                                  *
  ***********************************************************************
  * @author FioPio   (Ferriol Pey Comas)  ferriol73pey@gmail.com        *
- * @version v1.1    04/12/2018                                         *
+ * @version v1.2    22/12/2018                                         *
  ***********************************************************************
  * This file contains the 3D model of microservos mg90s, this has been *
  * done tinking on tamtam, a minihumanoid low cost designed by me,     *
@@ -25,44 +25,47 @@ $fn=120;
  ***********************************************************************/
 module mg90s(alpha=-1,is_cutted= false,two_axies=false )
 {
-   cube([23,12,23]);	
-   if(!is_cutted)
-   {
-				  translate([-5,0,18.75])union()
-				  {
-         cube([33,12,3]);
-         translate([2.5,6,-(10-2.5)/2])cylinder(r=1.25,h=11);
-         translate([2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
-         translate([33-2.5,6,-(10-2.5)/2])cylinder(r=1.25,h=11);
-         translate([33-2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
-						}
-			}
-			if(two_axies)
-			{
-				  translate([6,6,-1.2])                                             //Continuation of the axis
-	     {
-							   cylinder(r1=1,r2=1.9,h=1.2);
-							   translate([0,0,0.01])cylinder(r1=1,r2=1.9,h=1.2);
-							   translate([0,0,-8])cylinder(r=1,h=9);
-						}
-			}
-   translate([6,6])cylinder(r=6,h=29);
-   translate([12,6])cylinder(r=3,h=29);
-   translate([6,6])cylinder(r=3.75,h=35.1);
-   translate([-4,3.5,3.5])cube([5,5,2]);
-   if(alpha!=-1)
-   {
-				   translate([6,6,23+6+6.1-2])rotate([0,0,alpha])union()
-				   {
-				      hull()
-				      {
-								     cylinder(r=3.75,h=2);
-								     translate([15-1.75,0])cylinder(r=2,h=2);
-							   }
-							   //holes for the screws (there is one every 2 mm)
-							   translate([4.5,0,-5])cylinder(r=.5,h=12);
-							   translate([12.5,0,-5])cylinder(r=.5,h=12);
-							}
-			}
-}
+   translate([-6.5,-6.5])
+	  {
+      cube([23,13,23]);	
+      if(!is_cutted)
+      {
+				     translate([-5,0,18.75])union()
+				     {
+            cube([33,12,3]);
+            translate([2.5,6,-(10-2.5)/2-4])cylinder(r=.75,h=15);
+            translate([2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
+            translate([33-2.5,6,-(10-2.5)/2-4])cylinder(r=.75,h=15);
+            translate([33-2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
+	   					}
+   			}
+   			if(two_axies)
+   			{
+   				  translate([6,6,-1.2])                                             //Continuation of the axis
+   	     {
+   							   cylinder(r1=1,r2=1.9,h=1.2);
+	   						   translate([0,0,0.01])cylinder(r1=1,r2=1.9,h=1.2);
+	   						   translate([0,0,-8])cylinder(r=1,h=9);
+	   					}
+   			}
+      translate([6.5,6.5])cylinder(r=6.5,h=29);
+      translate([12.5,6.5])cylinder(r=3.5,h=29);
+      translate([6.5,6.5])cylinder(r=3.75,h=35.1);
+      translate([-4,3.5,4.5])cube([5,5,2]);
+      if(alpha!=-1)
+      {
+   				   translate([6,6,23+6+6.1-2])rotate([0,0,alpha])union()
+   				   {
+   				      hull()
+   				      {
+	   							     cylinder(r=3.75,h=2);
+	   							     translate([16,0])cylinder(r=2.25,h=2);
+   							   }
+	   						   //holes for the screws (there is one every 2 mm)
+	   						   translate([4.5,0,-5])cylinder(r=.5,h=12);
+   							   translate([12.5,0,-5])cylinder(r=.5,h=12);
+	   						}
+   			}
+   }
+} 
 
