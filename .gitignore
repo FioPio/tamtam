@@ -3,3 +3,8 @@
 #the gcodes of the pieces are not necessary since every printer needs
 #it's own.
 .gitignore
+GCODES/
+DOC/
+
+complet_model.scad
+tamtam_board_components.csv
