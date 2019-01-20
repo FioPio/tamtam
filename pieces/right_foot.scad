@@ -10,8 +10,8 @@
 use <mg90s.scad>   
 //Parameters
 $fn=120;
-foot_width=50;//50; 
-foot_length=70;//1.62*foot_width;
+foot_width=50; 
+foot_length=70;
 R=8;
 foot_height=2.5;
 translate([-foot_width/2,-foot_length/2])difference()
