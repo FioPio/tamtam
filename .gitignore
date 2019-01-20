@@ -2,8 +2,4 @@
 
 #the gcodes of the pieces are not necessary since every printer needs
 #it's own.
-GCODES/
-DOC/
-
-complet_model.scad
-tamtam_board_components.csv
+.gitignore
