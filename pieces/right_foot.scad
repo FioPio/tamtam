@@ -2,7 +2,7 @@
  *                            right_foot                               *
  ***********************************************************************
  * @author FioPio   (Ferriol Pey Comas)  ferriol73pey@gmail.com        *
- * @version v1.1    22/12/2018                                         *
+ * @version v1.2    20/01/2018                                         *
  ***********************************************************************
  * This file contains the 3D model of the right foot, so mirroring it  *
  * you obtain the left one.                                            *
