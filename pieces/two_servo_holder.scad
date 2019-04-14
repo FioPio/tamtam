@@ -14,30 +14,17 @@ use <mg90s.scad>                                                        //To use
 $fn=120;
 difference()
 {
-  	translate([0.05,-33.05+29,0.05])cube([32.9,32.9,23.9]);              //The box that contains everything
-   translate([5,0,12])rotate([-90,0])
+  	translate([0.05,-33.05+29,0.05])cube([32.9,32.9,25.84]);              //The box that contains everything
+   translate([6.5+5,0,6.5])rotate([-90,0])
    {
-				  mg90s();                                                          //The lower servo
-					 translate([-9,3.5,3.5])cube([10,10,2]);                           //The hole to pass the cable
-						translate([0,6,22])cube(15);                                      //The hole to introduce the servo
-						translate([6,6,-1.2])                                             //Continuation of the axis
-	     {
-							   cylinder(r1=1,r2=1.9,h=1.2);
-							   translate([0,0,0.01])cylinder(r1=1,r2=1.9,h=1.2);
-							   translate([0,0,-8])cylinder(r=1,h=9);
-						}
+				  mg90s(-1,false,true);                                                          //The lower servo
+					 translate([-9,0,4.5])cube([10,10,2]);                           //The hole to pass the cable
+						translate([-6.5,0,22])cube(16);                                      //The hole to introduce the servo
 			}
-   translate([29,23,12])rotate([90,0,-90])
+   translate([29,17.4,32.4-13])rotate([90,0,-90])
    {
-				  mg90s();                                                          //The upper one
-      translate([-7,3.5,3.5])cube([10,10,2]);                           //The hole to pass the cable
-      translate([0,6,22])cube(15);                                      //The hole to introduce the servo
-	     translate([6,6,-1.2])                                             //Continuation of the axis
-	     {
-							   cylinder(r1=1,r2=1.9,h=1.2);
-							   translate([0,0,0.01])cylinder(r1=1,r2=1.9,h=1.2);
-							   translate([0,0,-8])cylinder(r=1,h=9);
-						}
+				  mg90s(-1,false,true);                                                          //The upper one
+      translate([-7,0,4.5])cube([10,10,2]);                           //The hole to pass the cable
+      translate([-6.5,0,22])cube(16);                                      //The hole to introduce the servo
 			}
-			translate([5,0])cube(23);
 }
