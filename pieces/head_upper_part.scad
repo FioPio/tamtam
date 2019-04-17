@@ -32,14 +32,6 @@ difference()
 			}
    union()
    {
-      translate([6+3,-6,28])rotate([0,180,0])mg90s(0);
-      translate([-19,-6,-18])cube([33,12,25]);
-      //Camera
-      translate([head_widht/2-5.5-1,-6,4])union()
-      {
-			   	   cube([5.5,12,12]);
-			   	   translate([5,6,6])rotate([0,90,0])cylinder(r1=R_cam_optic,r2=R_cam_optic+17,h=5);
-      }
       //Camera wires
       translate([head_widht/2-5.5-1.5,-6,2])cube([5.5,12,26]);//*/
       //upper cover empty operation
@@ -71,8 +63,8 @@ difference()
    }
    union()
    {
-      translate([-head_widht/2+2,-head_lenght/2+2])cube([head_widht-4,head_lenght-4,head_hight/2+3]);
-      translate([-35,-35])cube([70,70,head_hight/2]);
+      translate([-head_widht/2+1.5,-head_lenght/2+1.5])cube([head_widht-3,head_lenght-3,head_hight/2+4]);
+      translate([-35,-35,-2])cube([70,70,head_hight/2+2]);
 			}
    //translate([-35,-35,head_hight/2])cube([70,70,head_hight/2+5]);
 }
