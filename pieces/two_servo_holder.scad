@@ -18,13 +18,13 @@ difference()
    translate([6.5+5,0,6.5])rotate([-90,0])
    {
 				  mg90s(-1,false,true);                                                          //The lower servo
-					 translate([-9,0,4.5])cube([10,10,2]);                           //The hole to pass the cable
+					 translate([-15,-3,4.5])cube([10,10,2]);                           //The hole to pass the cable
 						translate([-6.5,0,22])cube(16);                                      //The hole to introduce the servo
 			}
    translate([29,17.4,32.4-13])rotate([90,0,-90])
    {
 				  mg90s(-1,false,true);                                                          //The upper one
-      translate([-7,0,4.5])cube([10,10,2]);                           //The hole to pass the cable
+      translate([-15,-3,4.5])cube([10,10,2]);                           //The hole to pass the cable
       translate([-6.5,0,22])cube(16);                                      //The hole to introduce the servo
 			}
 }
