@@ -31,5 +31,5 @@ difference()
       }
    }
    translate([-8,4,-10])cube([12.5+8,33,20]);
-   translate([6,8,-6])rotate([-90,180])mg90s(180,false,true);
+   translate([0,8])rotate([-90,180])mg90s(180,false,true);
 }

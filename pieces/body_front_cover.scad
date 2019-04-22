@@ -27,27 +27,21 @@ difference()
 							translate([body_width-R,body_height-R])cylinder(r=R,h=5.5);
 							translate([body_width-R,R])cylinder(r=R,h=5.5);
 							
-							translate([R_S,R_S,back_cover_height-R_S+5.5])sphere(R_S);
-							translate([R_S,body_height-R_S-offset_back,back_cover_height-R_S+5.5])sphere(R_S);
-							translate([body_width-R_S,body_height-R_S-offset_back,back_cover_height-R_S+5.5])sphere(R_S);
-							translate([body_width-R_S,R_S,back_cover_height-R_S+5.5])sphere(R_S);
+							translate([R,R,back_cover_height-R_S+5.5])cylinder(r=R,h=R_S);
+							translate([R,body_height-R-offset_back,back_cover_height-R_S+5.5])cylinder(r=R,h=R_S);
+							translate([body_width-R,body_height-R-offset_back,back_cover_height-R_S+5.5])cylinder(r=R,h=R_S);
+							translate([body_width-R,R,back_cover_height-R_S+5.5])cylinder(r=R,h=R_S);
 			}
 			translate([body_width,0,0])rotate([0,180])union()
 			{
-						difference()
+						hull()
 						{
-									hull()
-									{
-												translate([R,R])cylinder(r=R,h=12);
-												translate([R,body_height-R])cylinder(r=R,h=12);
-												translate([body_width-R,body_height-R])cylinder(r=R,h=12);
-												translate([body_width-R,R])cylinder(r=R,h=12);
-									}
-									translate([body_width/2,2,2])rotate([90,0])holder();
-									translate([body_width/2-20,body_height-2,2])rotate([90,0,180])holder();
-									translate([body_width/2+20,body_height-2,2])rotate([90,0,180])holder();
+									translate([R,R])cylinder(r=R,h=12);
+									translate([R,body_height-R])cylinder(r=R,h=12);
+									translate([body_width-R,body_height-R])cylinder(r=R,h=12);
+									translate([body_width-R,R])cylinder(r=R,h=12);
 						}
-						translate([6+body_width/2,33+body_height+0.25,-4])rotate([0,-90,90])mg90s(0,true);
+						translate([body_width/2,33+body_height+0.25,2.5])rotate([0,-90,90])mg90s(0,true);
 						translate([body_width/2,2,2])rotate([90,0])translate([-3,-1.5,-1.25])cube([6,4,5.5]);
 						translate([body_width/2-20,body_height-2,2])rotate([90,0,180])translate([-3,-1.5,-1.25])cube([6,4,5.5]);
  					translate([body_width/2+20,body_height-2,2])rotate([90,0,180])translate([-3,-1.5,-1])cube([6,4,5.5]);

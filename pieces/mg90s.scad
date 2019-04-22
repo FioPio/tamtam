@@ -33,10 +33,10 @@ module mg90s(alpha=-1,is_cutted= false,two_axies=false )
 				     translate([-5,0,18.75])union()
 				     {
             cube([33,13,3]);
-            translate([2.5,6,-(10-2.5)/2-4])cylinder(r=.75,h=15);
-            translate([2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
-            translate([33-2.5,6,-(10-2.5)/2-4])cylinder(r=.75,h=15);
-            translate([33-2.5,6,10-(10-2.5)/2])cylinder(r=2.5,h=5);
+            translate([2.5,6.5,-(10-2.5)/2-4])cylinder(r=.75,h=15);
+            translate([2.5,6.5,10-(10-2.5)/2])cylinder(r=2.5,h=5);
+            translate([33-2.5,6.5,-(10-2.5)/2-4])cylinder(r=.75,h=15);
+            translate([33-2.5,6.5,10-(10-2.5)/2])cylinder(r=2.5,h=5);
 	   					}
    			}
    			if(two_axies)
@@ -54,7 +54,7 @@ module mg90s(alpha=-1,is_cutted= false,two_axies=false )
       translate([-4,3.5,4.5])cube([5,5,2]);
       if(alpha!=-1)
       {
-   				   translate([6,6,23+6+6.1-2])rotate([0,0,alpha])union()
+   				   translate([6.5,6.5,23+6+6.1-2])rotate([0,0,alpha])union()
    				   {
    				      hull()
    				      {
@@ -68,4 +68,3 @@ module mg90s(alpha=-1,is_cutted= false,two_axies=false )
    			}
    }
 } 
-
