@@ -16,26 +16,16 @@
 #endif
 #include "Wire.h"
 
-tamtam::tamtam(bool master)
-{
-   _master=_master;
-   tamtam_setup();
-}
-
 void tamtam::tamtam_setup()
 {
    pinMode(RED_LED,OUTPUT);
    pinMode(GREEN_LED,OUTPUT);
    pinMode(BLUE_LED,OUTPUT);
    pinMode(SERVOS_MOSFFET,OUTPUT);
-   set_eyes_colour(0,255,0);
+   //set_eyes_colour(0,255,0);
    disable_motors();
-   if(_master)
-   {
-      Wire.begin();
-      Serial.write("Hello!");
-   }
-   else Wire.begin(ARDUINO_I2C_ADDRESS);
+   //Set expanded mode
+   //setExpand(); 
 }
 
 void tamtam::set_eyes_colour(unsigned char r, unsigned char g, unsigned char b)
@@ -170,13 +160,25 @@ unsigned char tamtam::read_serial()
    return c;
 }
 
-
+void tamtam::set_servo(int s, float a)
+{
+	if(s>0 and s<20)
+	{
+		int angle = a * ANGLE_EQUIVALENCE;
+		if(angle<0) angle = 0;
+		else if (angle>255) angle = 255;
+		Wire.beginTransmission(SD20); 
+		Wire.write(s);
+		Wire.write(angle);
+		Wire.endTransmission();
+	} 
+}
 
 
 LEG_CONFIGURATION_T compute_angles(LEG_SETPOINT_T setpoint)
 {
 	LEG_CONFIGURATION_T leg_config;
-	float BD,x,y,z;
+	float BD_DIS,x,y,z;
 	//computing the new frame values
 	x=(setpoint.x*cos(setpoint.epsilon))+(setpoint.y*sin(setpoint.epsilon));
 	y=(setpoint.y*cos(setpoint.epsilon))-(setpoint.x*sin(setpoint.epsilon));
@@ -185,10 +187,48 @@ LEG_CONFIGURATION_T compute_angles(LEG_SETPOINT_T setpoint)
 	leg_config.alpha=atan( x / ( z-TA-EF) );
 	float a=y-(AB*sin(leg_config.alpha))-(DE*sin(leg_config.alpha));
 	float b=z-(AB*cos(leg_config.alpha))-(DE*cos(leg_config.alpha))-TA;
-	BD=sqrt((x*x)+(a*a)+(b*b));
-	leg_config.gamma=PI-acos(((BC*BC)+(CD*CD)-(BD*BD))/(2*BC*CD));
-	leg_config.delta= asin(x/BD)+acos(((CD*CD)+(BD*BD)-(BC*BC))/(2*CD*BC));
+	BD_DIS=sqrt((x*x)+(a*a)+(b*b));
+	leg_config.gamma=PI-acos(((BC*BC)+(CD_DIS*CD_DIS)-(BD_DIS*BD_DIS))/(2*BC*CD_DIS));
+	leg_config.delta= asin(x/BD_DIS)+acos(((CD_DIS*CD_DIS)+(BD_DIS*BD_DIS)-(BC*BC))/(2*CD_DIS*BC));
 	leg_config.beta=leg_config.gamma-leg_config.delta;
 	leg_config.epsilon=setpoint.epsilon;
 	return leg_config;
+}
+
+void tamtam::i2c_write(unsigned char dev, unsigned char reg, unsigned char data)
+{
+	Wire.beginTransmission(dev);
+	Wire.write(reg);
+	Wire.write(data);
+	Wire.endTransmission();
+    delayMicroseconds(100);
+}
+
+unsigned char tamtam::i2c_read(int dev, unsigned char reg)
+{
+	Wire.beginTransmission(dev);
+	Wire.write(reg); 
+	Wire.endTransmission();
+	return Wire.requestFrom(dev,1);
+}
+
+void tamtam::setExpand()
+{                     
+	Wire.beginTransmission(SD20);
+	Wire.write(21);
+	Wire.write(27);
+	Wire.endTransmission();
+	delayMicroseconds(70);
+	
+	Wire.beginTransmission(SD20);
+	Wire.write(22);
+	Wire.write(1);
+	Wire.endTransmission();
+	delayMicroseconds(70);
+	
+	Wire.beginTransmission(SD20);
+	Wire.write(23);
+	Wire.write(44);
+	Wire.endTransmission();
+	delayMicroseconds(70); 
 }

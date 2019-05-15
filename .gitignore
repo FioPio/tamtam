@@ -5,3 +5,5 @@
 GCODES/
 DOC/
 VIDEOS/
+code/simulator/bin/*
+code/simulator/build/*
