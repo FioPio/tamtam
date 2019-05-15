@@ -1,0 +1,3 @@
+/home/fio/Documents/projectes/tamtam/code/simulator/walking_v3/CMakeFiles/rebuild_cache.dir
+/home/fio/Documents/projectes/tamtam/code/simulator/walking_v3/CMakeFiles/walking_v3.dir
+/home/fio/Documents/projectes/tamtam/code/simulator/walking_v3/CMakeFiles/edit_cache.dir
