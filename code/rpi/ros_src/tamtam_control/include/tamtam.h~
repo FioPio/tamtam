@@ -23,7 +23,7 @@
 #define READ_BATTERY          0x04
 
 //Hardware Configuration (Structure)
-#define TA                    15
+#define TA_DIS                15
 #define AB                    12
 #define BC                    31
 #define CD_DIS                31

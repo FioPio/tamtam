@@ -23,7 +23,7 @@
 #define READ_BATTERY          0x04
 
 //Hardware Configuration (Structure)
-#define TA                    15
+#define TA_DIS                15
 #define AB                    12
 #define BC                    31
 #define CD_DIS                31
@@ -49,7 +49,7 @@
 #define BD                    16
 #define ZE                    17
 #define ZD                    18
-#define CA                    19
+#define CAP                   19
 
 //Home positions
 #define BPE                  105.0

@@ -131,7 +131,7 @@ void tamtam::to_home()
     set_servo(BD,BBD);
     set_servo(ZE,BZE);
     set_servo(ZD,BZD);
-    set_servo(CA,BCA);
+    set_servo(CAP,BCA);
     //Disables de servos that are not in load
     delay(250);
     disable_motor(EE);
@@ -140,7 +140,7 @@ void tamtam::to_home()
     disable_motor(BD);
     disable_motor(ZE);
     disable_motor(ZD);
-    disable_motor(CA);
+    disable_motor(CAP);
 }
 
 
@@ -175,9 +175,9 @@ LEG_CONFIGURATION_T tamtam::compute_angles(LEG_SETPOINT_T setpoint)
   y=(setpoint.y*cos(setpoint.zeta))-(setpoint.x*sin(setpoint.zeta));
   z=setpoint.z;
   //computing the joint angles
-  leg_config.alpha=atan( y / ( z-TA-EF) );
+  leg_config.alpha=atan( y / ( z-TA_DIS-EF) );
   float a=y-(AB*sin(leg_config.alpha))-(DE*sin(leg_config.alpha));
-  float b=z-(AB*cos(leg_config.alpha))-(DE*cos(leg_config.alpha))-TA - EF;
+  float b=z-(AB*cos(leg_config.alpha))-(DE*cos(leg_config.alpha))-TA_DIS - EF;
   BD_DIS=sqrt((x*x)+(a*a)+(b*b));
   leg_config.gamma=PI-acos(((BC*BC)+(CD_DIS*CD_DIS)-(BD_DIS*BD_DIS))/(2*BC*CD_DIS));
   leg_config.delta= asin(x/BD_DIS)+acos(((CD_DIS*CD_DIS)+(BD_DIS*BD_DIS)-(BC*BC))/(2*CD_DIS*BD_DIS));
