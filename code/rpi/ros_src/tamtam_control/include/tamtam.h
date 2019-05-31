@@ -59,7 +59,7 @@
 #define BGE                  119.0
 #define BGD                   51.0
 #define BFE                   27.0//24.0//replace servo
-#define BFD                  135.0//138.0
+#define BFD                  136.0//138.0
 #define BAE                   55.0
 #define BAD                   67.0
 #define BCE                   70.0
