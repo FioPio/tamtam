@@ -1,3 +1,13 @@
+/**************************************************************
+ *                        tamtam_control                          
+ **************************************************************
+ * @author FioPio (Ferriol Pey Comas)  @version v3.2 07/06/2019
+ **************************************************************
+ * This file provides the code for the ros node tamtam_control  
+ * and it controls the tamtam movement and logic.    
+ *************************************************************/
+
+
 #include <tamtam.h>
 #include <ros/ros.h>
 #include <orientation/Orientation.h>
@@ -60,6 +70,8 @@ public:
     right_leg.z=BASE_HEIGH;
     correction_p=0;
     err_p_f_a=0;
+    step=0;
+    t=0;
   }
 
   void orientation_callback(const orientation::Orientation orient_msg)
@@ -73,6 +85,28 @@ public:
   ////////////////////////////////////////////////////////////
   void loop()
   {
+    switch(step)
+    {
+       case 3:
+	 if(t>3)
+	 {
+	   t=0;
+	   step=0;
+	 }
+	 break;
+       case  0:
+	 right_leg.y= STEP_LATERAL * sin(W*t);
+	 left_leg.y= STEP_LATERAL * sin(W*t);
+	 if(t > T_WALKING/4.0 )
+	 {
+	     t  = 0;
+	     right_leg.y = STEP_LATERAL ;
+	     left_leg.y = STEP_LATERAL ;
+	     step++;
+	 }
+  	 break;
+    }
+    
     if(millis()-t_ant > T_CORRECCIO)
     {
       float y_pitch=pitch-PITCH_0;
@@ -97,7 +131,6 @@ public:
 	  err_acu_p-=err_p*dt;
 	}
       
-      
       if((millis()-t_init_file)>T_SAMPLE && write)
       {
 	write=false;
@@ -114,7 +147,7 @@ public:
 	    myfile << pitch-PITCH_0 <<" ; "<<millis()-t_init_file<<";"<< correction_p<<"\n";
        }
      }
-     if(write && step<4 )
+     if(write)
      {
       //computig the angles to get the desired position
       left_cfg=Tam.compute_angles(left_leg);
@@ -122,7 +155,7 @@ public:
       //aplaying the corrections for the PID stabilizing
       // right_cfg.epsilon+=(correction_epsilon_r/180.0)*PI;
       //left_cfg.epsilon+=correction_epsilon_l;
-      right_cfg.delta+=(correction_p/180.0)*PI; //eren menys
+      right_cfg.delta+=(correction_p/180.0)*PI; 
       left_cfg.delta+=(correction_p/180.0)*PI;
       right_cfg.gamma-=(correction_p/(180.0*2))*PI;
       left_cfg.gamma-=(correction_p/(180.0*2))*PI;
@@ -133,8 +166,8 @@ public:
       //Seting the servomotors*/
       Tam.set_legs(right_cfg,left_cfg);
     }
-     //t+=(millis()-t_ant)/1000.0;
-     //t_ant=millis();
+     t+=(millis()-t_ant_c)/1000.0;
+     t_ant_c=millis();
     }
   }
   //////////////////////////////////////////////////////////////////////  
@@ -146,7 +179,8 @@ private:
   tamtam Tam;
   bool readed,write;
   std::ofstream myfile;
-  unsigned int t_ant, t_init_file;
+  unsigned int t_ant, t_init_file, t_ant_c;
+  float t;
   char step;
   LEG_SETPOINT_T left_leg,right_leg;
   LEG_CONFIGURATION_T left_cfg, right_cfg;
@@ -168,53 +202,3 @@ int main(int argc, char **argv)
     }
   return 0;
 }
-
-/*#include <stdio.h>
-#include <math.h>
-
-#define T_WALKING                       2
-#define STAND_HEIGH                   121.0
-#define BASE_HEIGH                    107.5
-#define STEP_HEIGH                     15
-#define STEP_LATERAL                   35
-#define STEP_FORWARD                   22.5
-#define W              (2.0*PI)/T_WALKING
-
-
-
-int main()
-{
-  tamtam Tam;
-  
-  left_leg.zeta=0;
-  right_leg.zeta=0;
-  left_leg.x=0;
-  right_leg.x=0;
-  left_leg.y=0;
-  right_leg.y=0;   
-  Tam.setup();
-  Tam.to_home();
-  long int t0=millis();
-  float t=0;
-  while(t < T_WALKING)
-  {
-    left_leg.z=STAND_HEIGH - (STAND_HEIGH-BASE_HEIGH)*sin(W*t/4.0);
-    right_leg.z=STAND_HEIGH - (STAND_HEIGH-BASE_HEIGH)*sin(W*t/4.0);
-    delay(50);
-    t=(millis()-t0)/1000.0;
-    Tam.set_legs(Tam.compute_angles(right_leg),Tam.compute_angles(left_leg));
-    }
-  left_leg.z=107.5;
-  right_leg.z=107.5;
-  //Tam.set_servo(1,0);
-  //delay(750);
-  //Tam.set_servo(1,90);
-  Tam.get_battery_level();
-  printf("\nVoltage: %0.2f\n",Tam.get_battery_level()); 
-  delay(750);
-
-  delay(750);
-  Tam.set_eyes_colour(OFF);
-  Tam.disable_motors();
-}
-*/

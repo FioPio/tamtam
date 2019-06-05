@@ -1,0 +1,3 @@
+/home/fio/Documents/projectes/tamtam/code/rpi/photo_cal/CMakeFiles/rebuild_cache.dir
+/home/fio/Documents/projectes/tamtam/code/rpi/photo_cal/CMakeFiles/camera_calibration.dir
+/home/fio/Documents/projectes/tamtam/code/rpi/photo_cal/CMakeFiles/edit_cache.dir

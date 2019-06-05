@@ -1,12 +1,12 @@
-/***********************************************************************
- *                         body_back_cover                             *
- ***********************************************************************
- * @author  FioPio    (Ferriol Pey Comas)   ferriol73pey@gmail.com     *
- * @version v2.0       20/04/2019                                      *
- ***********************************************************************
- * This file contains the 3D model of the body part that covers the    *
- * electronic parts.                                                   *
- ***********************************************************************/
+/****************************************************************
+ *                         body_back_cover                       
+ ****************************************************************
+ * @author  FioPio  (Ferriol Pey Comas)   ferriol73pey@gmail.com 
+ * @version v2.0       20/04/2019                                
+ ****************************************************************
+ * This file contains the 3D model of the body part that covers 
+ * the electronic parts.                                         
+ ***************************************************************/
 include <body_data.scad>
 $fn=200;
 back_cover_height=20;

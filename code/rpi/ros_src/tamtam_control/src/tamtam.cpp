@@ -1,11 +1,11 @@
-/***********************************************************************
- *                               TAMTAM                                *
- ***********************************************************************
- * @author FioPio (Ferriol Pey Comas)  @version v1.2 15/05/2019        *
- ***********************************************************************
- * This file provides the principal functions and clases to make the   *
- * Tamtam robot work with  raspberry pi zero W.                        *
- ***********************************************************************/
+/**************************************************************
+ *                          TAMTAM                        
+ **************************************************************
+ * @author FioPio (Ferriol Pey Comas)  @version v1.2 15/05/2019
+ **************************************************************
+ * This file provides the principal functions and clases 
+ * to make the Tamtam robot work with  raspberry pi zero W.    
+ *************************************************************/
 #include <tamtam.h>
 #include <math.h>
 

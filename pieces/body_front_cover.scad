@@ -1,12 +1,12 @@
-/***********************************************************************
- *                         body_front_cover                            *
- ***********************************************************************
- * @author  FioPio    (Ferriol Pey Comas)   ferriol73pey@gmail.com     *
- * @version v1.2       07/12/2018                                      *
- ***********************************************************************
- * This file contains the 3D model of the body part that covers the    *
- * the battery. The write function has been done by Harlan Martin.     *
- ***********************************************************************/
+/****************************************************************
+ *                         body_front_cover                      
+ ****************************************************************
+ * @author  FioPio  (Ferriol Pey Comas)   ferriol73pey@gmail.com 
+ * @version v1.2       07/12/2018                                
+ ****************************************************************
+ * This file contains the 3D model of the body part that covers 
+ * the battery. The write function has been done by Harlan Martin
+ ***************************************************************/
 include <body_data.scad>
 use<write/write.scad>
 

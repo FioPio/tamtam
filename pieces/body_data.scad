@@ -1,12 +1,12 @@
-/***********************************************************************
- *                             body_data                               *
- ***********************************************************************
- * @author FioPio   (Ferriol Pey Comas)  ferriol73pey@gmail.com        *
- * @version v1.0    11/12/2018                                         *
- ***********************************************************************
- * This file contains the information needed for building the body and *
- * it's front and back covers.                                         *
- ***********************************************************************/
+/*************************************************************
+ *                             body_data                      
+ *************************************************************
+ * @author FioPio (Ferriol Pey Comas)  ferriol73pey@gmail.com 
+ * @version v1.0    11/12/2018                                
+ *************************************************************
+ * This file contains the information needed for building the 
+ * body and it's front and back covers.                       
+ ************************************************************/
  
 use <mg90s.scad>
 $fn=120;

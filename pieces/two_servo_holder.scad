@@ -1,13 +1,13 @@
-/***********************************************************************
- *                         two_servo_holder                            *
- ***********************************************************************
- * @author  FioPio    (Ferriol Pey Comas)   ferriol73pey@gmail.com     *
- * @version v1.0       04/12/2018                                      *
- ***********************************************************************
- * This file contains the 3D model of the piece that holds two servos  *
- * to have two degres of freedom "in the same joint" used in the ankle *
- * and in the upper part of the leg.                                   *
- ***********************************************************************/
+/****************************************************************
+ *                         two_servo_holder                      
+ ****************************************************************
+ * @author  FioPio  (Ferriol Pey Comas)   ferriol73pey@gmail.com 
+ * @version v1.0       04/12/2018                                
+ ****************************************************************
+ * This file contains the 3D model of the piece that holds two 
+ * servos to have two degres of freedom "in the same joint" used 
+ * in the ankle and in the upper part of the leg.                
+ ***************************************************************/
 
 
 use <mg90s.scad>                                                        //To use the module created before

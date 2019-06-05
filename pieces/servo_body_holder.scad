@@ -1,12 +1,13 @@
-/***********************************************************************
- *                        servo_body_holder                            *
- ***********************************************************************
- * @author  FioPio    (Ferriol Pey Comas)   ferriol73pey@gmail.com     *
- * @version v1.2       07/12/2018                                      *
- ***********************************************************************
- * This file contains the 3D model of the body part that holds the     *
- * servomotors.                                                        *
- ***********************************************************************/
+/****************************************************************
+ *                        servo_body_holder                      
+ ****************************************************************
+ * @author  FioPio  (Ferriol Pey Comas)   ferriol73pey@gmail.com 
+ * @version v1.2       07/12/2018                                
+ ****************************************************************
+ * This file contains the 3D model of the body part that holds 
+ * the servomotors.                                              
+ ***************************************************************/
+ 
 include<body_data.scad>
 
 difference()
@@ -51,7 +52,6 @@ difference()
 			}
 			translate([body_width/2,2,2])rotate([90,0])holder();
 			translate([body_width/2,2,10])rotate([90,180])holder();
-			
 			translate([body_width/2-20,body_height-2,2])rotate([90,0,180])holder();
 			translate([body_width/2-20,body_height-2,10])rotate([90,180,180])holder();
 			translate([body_width/2+20,body_height-2,2])rotate([90,0,180])holder();

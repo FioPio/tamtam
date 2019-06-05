@@ -1,28 +1,28 @@
-/***********************************************************************
- *                              mg90s                                  *
- ***********************************************************************
- * @author FioPio   (Ferriol Pey Comas)  ferriol73pey@gmail.com        *
- * @version v1.3    20/01/2018                                         *
- ***********************************************************************
- * This file contains the 3D model of microservos mg90s, this has been *
- * done tinking on tamtam, a minihumanoid low cost designed by me,     *
- * FioPio, but it may be used on other projects due the license of     *
- * this. Please check the LICENSE file to know the details.            *
- ***********************************************************************/
-
+/*************************************************************
+ *                              mg90s                         
+ *************************************************************
+ * @author FioPio (Ferriol Pey Comas)  ferriol73pey@gmail.com 
+ * @version v1.3    20/01/2018                                
+ *************************************************************
+ * This file contains the 3D model of microservos mg90s, this 
+ * has been done tinking on tamtam, a minihumanoid low cost 
+ * designed by me, FioPio, but it may be used on other 
+ * projects due the license of this. Please check the LICENSE 
+ * file to know the details.
+ ************************************************************/
 $fn=120;
-
-/***********************************************************************
- *                              mg90s                                  *
- ***********************************************************************
- * This module creates a mg90s solid.                                  *
- ***********************************************************************
- * @param alpha (optional) it's the rotation angle of the holder of    *
- *        the servo. If you don't use this it will not apear.          *
- * @param is_cutted (optional) if it is set to true, the "ears" of the *
- *        servo will desapear, in order to have a module without it if *
- *        needed.                                                      *
- ***********************************************************************/
+/*************************************************************
+ *                              mg90s                         
+ *************************************************************
+ * This module creates a mg90s solid.                         
+ *************************************************************
+ * @param alpha (optional) it's the rotation angle of the 
+ * holder of the servo. If you don't use this it will not 
+ * apear.          
+ * @param is_cutted (optional) if it is set to true, the 
+ *        the servo holders will desapear, in order to have a 
+ *        module without it if needed.
+ ************************************************************/
 module mg90s(alpha=-1,is_cutted= false,two_axies=false )
 {
    translate([-6.5,-6.5])
@@ -41,7 +41,7 @@ module mg90s(alpha=-1,is_cutted= false,two_axies=false )
    			}
    			if(two_axies)
    			{
-   				  translate([6.5,6.5,-1.2])                                             //Continuation of the axis
+   				  translate([6.5,6.5,-1.2])  //Axis continuation
    	     {
    							   cylinder(r1=1,r2=1.9,h=1.2);
 	   						   translate([0,0,0.01])cylinder(r1=1,r2=1.9,h=1.2);

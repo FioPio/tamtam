@@ -1,12 +1,13 @@
-/***********************************************************************
- *                            right_foot                               *
- ***********************************************************************
- * @author FioPio   (Ferriol Pey Comas)  ferriol73pey@gmail.com        *
- * @version v1.2    20/01/2018                                         *
- ***********************************************************************
- * This file contains the 3D model of the right foot, so mirroring it  *
- * you obtain the left one.                                            *
- ***********************************************************************/
+/*************************************************************
+ *                            right_foot                      
+ *************************************************************
+ * @author FioPio (Ferriol Pey Comas)  ferriol73pey@gmail.com 
+ * @version v1.2    20/01/2018                                
+ *************************************************************
+ * This file contains the 3D model of the right foot, so 
+ * mirroring it the left one is obtained.
+ ************************************************************/
+ 
 use <mg90s.scad>   
 //Parameters
 $fn=120;
